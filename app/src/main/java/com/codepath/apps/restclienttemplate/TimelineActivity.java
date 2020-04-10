@@ -85,6 +85,7 @@ public class TimelineActivity extends AppCompatActivity {
 
     }
 
+
     private void loadMoreData(){
         // 1. Send an API request to retrieve appropriate paginated data
         client.getNextPageOfTweets(new JsonHttpResponseHandler() {
