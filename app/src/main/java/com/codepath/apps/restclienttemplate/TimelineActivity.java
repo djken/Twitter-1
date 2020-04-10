@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -76,6 +77,12 @@ public class TimelineActivity extends AppCompatActivity {
         rvTweets.addOnScrollListener(scrollListener);
 
         populateHomeTimeline();
+
+        // Set a divider to seperate the twewr
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recycleriew_divider));
+        rvTweets.addItemDecoration(dividerItemDecoration);
+
     }
 
     private void loadMoreData(){
@@ -117,7 +124,6 @@ public class TimelineActivity extends AppCompatActivity {
                  } catch (JSONException e) {
                      Log.e(TAG, "Json exception", e);
                  }
-
              }
 
              @Override

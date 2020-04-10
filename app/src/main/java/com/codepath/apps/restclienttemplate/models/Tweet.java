@@ -6,6 +6,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.codepath.apps.restclienttemplate.TimeFormatter;
+
 
 public class Tweet {
     public String body;
@@ -28,5 +30,25 @@ public class Tweet {
             tweets.add(fromJson(jsonArray.getJSONObject(i)));
         }
         return tweets;
+    }
+
+    public String getFormattedTimeStamp(){
+        return TimeFormatter.getTimeDifference(created_at);
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public String getCreatedAt() {
+        return created_at;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
     }
 }
